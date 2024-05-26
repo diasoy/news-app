@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const NEWS_API_BASE_URL = "https://newsapi.org/v2";
-const NEWS_API_KEY = "2d52e799bb7a4c61b6f5c71be306305f";
+const NEWS_API_BASE_URL = import.meta.env.VITE_NEWS_API_BASE_URL;
+const NEWS_API_KEY = import.meta.env.VITE_API_KEY;
 
 export const getNews = async ({ searchQuery = "technology" }) => {
   try {
