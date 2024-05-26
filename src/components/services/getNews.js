@@ -14,7 +14,13 @@ export const getNews = async ({ searchQuery = "technology" }) => {
 
     console.log("Endpoint URL:", endpointURL);
 
-    const res = await axios.get(endpointURL);
+    const res = await axios.get(endpointURL, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      mode: "cors",
+    });
 
     if (res.status === 200) {
       const additionalObj = {
